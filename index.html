@@ -131,7 +131,7 @@
             document.getElementById("msg").onkeyup = function () {
                 setTimeout(() => {
                     ws.send(JSON.stringify({ "event": 'ACT_BLUR', data: '' }));
-                }, 1000);
+                }, 1500);
             }
             document.getElementById("send").onclick = function (e) {
                 var msg = document.getElementById("msg").value;
@@ -158,10 +158,56 @@
         .comment_body {
             color: #4b4b4b;
             background: #dcf8c6;
-            border-radius: 17px;
             width: 50%;
             padding: 0.6rem;
             direction: ltr;
+            box-shadow: 2px 2px 20px 0px #22222273;
+            transition: 0.5s;
+            animation: appeat 0.2s linear 1;
+        }
+
+        .byy>.comment_body {
+            border-radius: 0px 17px 17px 17px;
+        }
+
+        .too>.comment_body {
+            border-radius: 17px 0px 17px 17px;
+
+        }
+
+        .comment.byy:after {
+            content: '';
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            top: 0;
+            left: -19px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAmCAMAAADp2asXAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAADAUExURUxpcXmHa4maet/4yA0aDRMTE8fhsgAAAAAAAMDXrCsxJeX/z1xzXIiYetPsvGBsVUdPPuH8zOH8zNDrvMvmtrrOpwAAAAAAABUVFRoaGtnyxLTMozQ+MMfftFBeSR8nH5aoh6q/mW9+ZN/4yMjhtRwlHAAAAIOWd+r/06C1kkNLOwsLC9z4xur/0+n/0t76x9v4xeL9y+b/z+j/0d/7yeH8yuX/zeD8ytz5xt76yOP/zeH+y+b/zuD8yd35xuf/0MY9jkkAAAAsdFJOUwBvd/ATDZIBAsMp/At/11c9yPbizHoICQwT4bY1ykkgjahl6s8bBYT6nUAWOLbtFAAAAIhJREFUKM/tzbUWwlAURNFBE9zdg0NecLf//yvKUJyUdDnl7HXXletXqmXl9wPbQ9JCcC+VJsOj2mDwovzj3osjHGNFEVxNRAj7UR1hlx+I4FbuC8HkZBE8OwnRxamdFsEmUxCCGdoI51RLBK9xVwTvjyMEbzlDMJMp7lqseNc8YNc6CGyF/a0vcmwhZbCG+kEAAAAASUVORK5CYII=);
+            transform: rotateY(180deg);
+        }
+
+        .comment.byy {
+            position: relative;
+        }
+
+        @keyframes appeat {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .comment.too:after {
+            content: '';
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAmCAMAAADp2asXAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAADAUExURUxpcXmHa4maet/4yA0aDRMTE8fhsgAAAAAAAMDXrCsxJeX/z1xzXIiYetPsvGBsVUdPPuH8zOH8zNDrvMvmtrrOpwAAAAAAABUVFRoaGtnyxLTMozQ+MMfftFBeSR8nH5aoh6q/mW9+ZN/4yMjhtRwlHAAAAIOWd+r/06C1kkNLOwsLC9z4xur/0+n/0t76x9v4xeL9y+b/z+j/0d/7yeH8yuX/zeD8ytz5xt76yOP/zeH+y+b/zuD8yd35xuf/0MY9jkkAAAAsdFJOUwBvd/ATDZIBAsMp/At/11c9yPbizHoICQwT4bY1ykkgjahl6s8bBYT6nUAWOLbtFAAAAIhJREFUKM/tzbUWwlAURNFBE9zdg0NecLf//yvKUJyUdDnl7HXXletXqmXl9wPbQ9JCcC+VJsOj2mDwovzj3osjHGNFEVxNRAj7UR1hlx+I4FbuC8HkZBE8OwnRxamdFsEmUxCCGdoI51RLBK9xVwTvjyMEbzlDMJMp7lqseNc8YNc6CGyF/a0vcmwhZbCG+kEAAAAASUVORK5CYII=);
+            top: 0px;
+            right: -19px;
         }
 
         #uimage {
@@ -195,6 +241,7 @@
 
         .comment.too {
             direction: rtl;
+            position: relative;
         }
 
         .desci {
@@ -295,6 +342,7 @@
             overflow-y: scroll;
         }
 
+        /* 
         ::-webkit-scrollbar-track {
             -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
             background-color: #F5F5F5;
@@ -308,6 +356,37 @@
         ::-webkit-scrollbar-thumb {
             background-color: #0ae;
             background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(.5, rgba(255, 255, 255, .2)), color-stop(.5, transparent), to(transparent));
+        } */
+
+        ::-webkit-scrollbar {
+            width: 6px !important;
+            height: 6px !important
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, .2)
+        }
+
+        ::-webkit-scrollbar-track {
+            background: hsla(0, 0%, 100%, .08)
+        }
+
+        div#talks {
+            height: 98%;
+            overflow-y: scroll;
+        }
+
+        .body,
+        body,
+        html,
+        .area {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .conversation {
+            height: 85%;
+            /* overflow: scroll; */
         }
 
         @media (max-width: 767px) {
