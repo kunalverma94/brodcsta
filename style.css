@@ -29,27 +29,12 @@ body {
     justify-content: center;
     align-content: center;
 }
-
 .appcon {
     margin-top: 65px;
 }
 
 .ulist {
     display: flex;
-    position: relative;
-}
-.ulist:after {
-    content: 'Online Users';
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    text-align: center;
-    color: #2196F3;
-    font-size: 18px;
-    text-shadow: 0 0 20px #2196F3;
-    letter-spacing: 12px;
-    z-index: -1;
 }
 .app {
     background: var(--pc);
@@ -119,7 +104,7 @@ body {
 }
 
 #nobg {
-    position: absolute;
+    position: fixed;
     z-index: 98;
     background: black;
     height: 100%;
