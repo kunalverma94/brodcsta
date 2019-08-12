@@ -51,15 +51,7 @@ try {
       console.log("wssc open");
     };
   }
-
-  navigator.getUserMedia(
-    {
-      video: {
-        height: 100,
-        width: 100,
-        facingMode: "user",
-      },
-    },
+navigator.getUserMedia(config,
     st => {
       stream = st;
       add(id, st);
@@ -131,6 +123,10 @@ try {
   function tog(e) {
     e.classList.toggle("on");
     document.getElementById("nobg").classList.toggle("hide");
+  }
+  function trymode(e) {
+
+    config.video.facingMode=config.video.facingMode==='user'?'environment':'user';
   }
 } catch (error) {
   alert(error);
